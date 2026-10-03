@@ -1,0 +1,648 @@
+/* ===========================
+   Digital Wallet Management System
+   MATTE BLACK LUXURY THEME
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+/* ===========================
+   Body
+=========================== */
+
+body{
+
+    background:#0A0A0A;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    min-height:100vh;
+
+    padding:40px 20px;
+
+    color:#F5F5F5;
+
+}
+
+/* ===========================
+   Main Container
+=========================== */
+
+.container{
+
+    width:460px;
+
+    background:#161616;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    text-align:center;
+
+    border:1px solid #2A2A2A;
+
+    box-shadow:
+    0 12px 30px rgba(0,0,0,.45),
+    0 0 0 1px rgba(255,255,255,.03);
+
+    animation:fadeUp .45s ease;
+
+}
+
+/* ===========================
+   Header
+=========================== */
+
+.logo{
+
+    font-size:54px;
+
+    margin-bottom:12px;
+
+}
+
+h1{
+
+    color:#D4AF37;
+
+    margin-bottom:6px;
+
+    letter-spacing:.5px;
+
+}
+
+.subtitle{
+
+    color:#B5B5B5;
+
+    font-size:15px;
+
+    margin-bottom:28px;
+
+}
+
+/* ===========================
+   Form
+=========================== */
+
+input{
+
+    width:100%;
+
+    padding:14px;
+
+    margin:10px 0;
+
+    background:#262626;
+
+    color:#FFFFFF;
+
+    border:1px solid #3A3A3A;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    transition:.25s;
+
+}
+
+input::placeholder{
+
+    color:#8A8A8A;
+
+}
+
+input:focus{
+
+    outline:none;
+
+    border-color:#D4AF37;
+
+    box-shadow:0 0 10px rgba(212,175,55,.35);
+
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+button{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-top:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#D4AF37;
+
+    color:#111111;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+button:hover{
+
+    background:#B8860B;
+
+    transform:translateY(-3px) scale(1.02);
+
+    box-shadow:0 8px 18px rgba(0,0,0,.35);
+
+}
+
+/* ===========================
+   Links
+=========================== */
+
+.small-text{
+
+    margin-top:15px;
+
+    color:#B5B5B5;
+
+    font-size:14px;
+
+}
+
+a{
+
+    color:#D4AF37;
+
+    text-decoration:none;
+
+    transition:.25s;
+
+}
+
+a:hover{
+
+    color:#E7C65A;
+
+    text-decoration:underline;
+
+}
+
+/* ===========================
+   Dashboard
+=========================== */
+
+.balance-card{
+
+    background:linear-gradient(145deg,#202020,#151515);
+
+    color:white;
+
+    border-radius:16px;
+
+    padding:25px;
+
+    margin:25px 0;
+
+    border:1px solid #343434;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.40);
+
+}
+
+.balance-card h3{
+
+    color:#D6D6D6;
+
+    font-weight:normal;
+
+}
+
+.balance{
+
+    font-size:40px;
+
+    font-weight:bold;
+
+    color:#D4AF37;
+
+    margin-top:12px;
+
+}
+
+.menu-button{
+
+    display:block;
+
+    width:100%;
+
+    background:#D4AF37;
+
+    color:#111111;
+
+    font-weight:bold;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    margin:10px 0;
+
+    text-decoration:none;
+
+    transition:.25s;
+
+}
+
+.menu-button:hover{
+
+    background:#B8860B;
+
+    transform:translateY(-3px) scale(1.02);
+
+    text-decoration:none;
+
+}
+
+.logout{
+
+    background:#8B1E1E;
+
+    color:white;
+
+}
+
+.logout:hover{
+
+    background:#6E1515;
+
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+.footer{
+
+    margin-top:30px;
+
+    color:#7D7D7D;
+
+    font-size:12px;
+
+    line-height:1.6;
+
+}
+
+/* ===========================
+   Transaction History
+=========================== */
+
+.transaction-card{
+    background:#181818;
+    border-radius:12px;
+    padding:18px;
+    margin-top:18px;
+    box-shadow:0 3px 12px rgba(0,0,0,.35);
+    transition:.25s;
+    border-left:4px solid #4B5563;
+}
+
+.transaction-card:hover{
+    transform:translateY(-2px);
+}
+
+/* Incoming transaction */
+.transaction-card.incoming{
+    border-left-color:#22c55e;
+}
+
+/* Outgoing transaction */
+.transaction-card.outgoing{
+    border-left-color:#ef4444;
+}
+
+
+/* Top section */
+
+.transaction-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.transaction-info{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-align:left;
+}
+
+
+/* Arrow */
+
+.transaction-icon{
+    width:42px;
+    height:42px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:8px;
+    font-size:27px;
+    font-weight:bold;
+    flex-shrink:0;
+}
+
+.transaction-icon.green{
+    color:#22c55e;
+    background:rgba(34,197,94,.12);
+}
+
+.transaction-icon.red{
+    color:#ef4444;
+    background:rgba(239,68,68,.12);
+}
+
+
+/* Transaction title */
+
+.transaction-top h3{
+    margin:0;
+    color:#F9FAFB;
+    font-size:17px;
+}
+
+.transaction-top p{
+    margin-top:5px;
+    color:#9CA3AF;
+    font-size:13px;
+}
+
+
+/* Amount */
+
+.amount{
+    font-size:20px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.amount.positive{
+    color:#22c55e;
+}
+
+.amount.negative{
+    color:#ef4444;
+}
+
+
+/* Bottom section */
+
+.transaction-bottom{
+    margin-top:15px;
+    padding-top:12px;
+    border-top:1px solid #374151;
+    display:flex;
+    justify-content:space-between;
+    color:#9CA3AF;
+    font-size:13px;
+}
+
+
+/* Status */
+
+.transaction-bottom .status{
+    color:#D1D5DB;
+    font-weight:bold;
+}
+
+/* ===========================
+   Admin Statistics
+=========================== */
+
+.admin-stats{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin:25px 0;
+
+}
+
+.stat-box{
+
+    width:190px;
+
+    background:#161616;
+
+    border:1px solid #2A2A2A;
+
+    border-radius:16px;
+
+    padding:20px;
+
+    text-align:center;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.45);
+
+    transition:.3s;
+
+}
+
+.stat-box:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.stat-box h3{
+
+    color:#CFCFCF;
+
+    margin-bottom:12px;
+
+}
+
+.stat-box p{
+
+    font-size:26px;
+
+    font-weight:bold;
+
+    color:#D4AF37;
+
+}
+
+/* ===========================
+   Flash Messages
+=========================== */
+
+.flash{
+
+    width:100%;
+
+    padding:14px;
+
+    margin:15px 0;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    font-weight:bold;
+
+}
+
+.flash.error{
+
+    background:#3A1010;
+
+    color:#FFB3B3;
+
+    border:1px solid #8B1E1E;
+
+}
+
+.flash.success{
+
+    background:#12351D;
+
+    color:#98F5B5;
+
+    border:1px solid #2E8B57;
+
+}
+
+/* ===========================
+   Scrollbar
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0A0A0A;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#3A3A3A;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#D4AF37;
+
+}
+
+/* ===========================
+   Animation
+=========================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.logo img{
+
+    width:75px;
+
+    height:75px;
+
+    object-fit:contain;
+
+}
+
+.center-page{
+
+    justify-content:center !important;
+
+    align-items:center !important;
+
+}
+
+/* ===========================
+   Profile Picture
+=========================== */
+
+.profile-picture{
+
+    margin:20px 0;
+
+}
+
+.profile-picture img{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:4px solid #D4AF37;
+
+    box-shadow:0 0 18px rgba(212,175,55,.35);
+
+}
+
+.upload-label{
+
+    display:block;
+
+    margin-top:12px;
+
+    margin-bottom:8px;
+
+    color:#D4AF37;
+
+    font-weight:bold;
+
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Dashboard | Digital Wallet</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+<div class="container">
+
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+    </div>
+
+    <h1>Digital Wallet</h1>
+
+    <div class="subtitle">
+        Welcome, {{ name }}
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+
+        {% for category, message in messages %}
+
+            <div class="flash {{ category }}">
+                {{ message }}
+            </div>
+
+        {% endfor %}
+
+    {% endif %}
+    {% endwith %}
+
+    <div class="balance-card">
+
+        <h3>Wallet Balance</h3>
+
+        <div class="balance">
+
+            ₹ {{ balance }}
+
+        </div>
+
+    </div>
+
+    <a href="/add_money" class="menu-button">
+        💰 Add Money
+    </a>
+
+    <a href="/transfer" class="menu-button">
+        💸 Transfer Money
+    </a>
+
+    <a href="/history" class="menu-button">
+        📄 Transaction History
+    </a>
+
+    <a href="/profile" class="menu-button">
+        👤 Profile
+    </a>
+
+    <a href="/change_password" class="menu-button">
+        🔒 Change Password
+    </a>
+
+    <a href="/logout" class="menu-button logout">
+        🚪 Logout
+    </a>
+
+    <div class="footer">
+
+        Fast & Secure<br>
+        Digital Wallet Management System
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

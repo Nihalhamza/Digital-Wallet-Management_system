@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>My Profile</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo">👤</div>
+
+    <h1>My Profile</h1>
+
+    <div class="subtitle">
+
+        Update your information
+    </div>
+
+    <div class="profile-picture">
+    <img src="{{ url_for('static', filename='profile_pics/' + user.profile_pic) }}"
+         alt="Profile Picture">
+    </div>
+
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+
+        {% for category, message in messages %}
+
+            <div class="flash {{ category }}">
+                {{ message }}
+            </div>
+
+        {% endfor %}
+
+    {% endif %}
+    {% endwith %}
+
+    <form action="/profile" method="POST" enctype="multipart/form-data">
+        <input
+            type="text"
+            name="name"
+            value="{{ user.name }}"
+            required>
+
+        <input
+            type="email"
+            name="email"
+            value="{{ user.email }}"
+            required>
+
+        <input
+            type="text"
+            name="phone"
+            value="{{ user.phone }}"
+            required>
+
+        <label class="upload-label">Change Profile Picture</label>
+
+        <input
+            type="file"
+            name="profile_image"
+            accept=".png,.jpg,.jpeg">
+
+        <button type="submit">
+
+            💾 Save Changes
+
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="/dashboard" class="menu-button">
+
+        ⬅ Back to Dashboard
+
+    </a>
+
+</div>
+
+</body>
+
+</html>

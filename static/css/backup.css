@@ -1,0 +1,457 @@
+/* ===========================
+   Digital Wallet Management System
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+/* ===========================
+   Body
+=========================== */
+
+body{
+
+    background:#eef2f7;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    min-height:100vh;
+
+    padding:20px;
+
+}
+
+/* ===========================
+   Main Container
+=========================== */
+
+.container{
+
+    width:420px;
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:30px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+
+    text-align:center;
+
+}
+
+/* ===========================
+   Header
+=========================== */
+
+.logo{
+
+    font-size:50px;
+    margin-bottom:8px;
+
+}
+
+h1{
+
+    color:#2563eb;
+    margin-bottom:5px;
+
+}
+
+.subtitle{
+
+    color:#666;
+    font-size:14px;
+    margin-bottom:25px;
+
+}
+
+/* ===========================
+   Form
+=========================== */
+
+input{
+
+    width:100%;
+
+    padding:12px;
+
+    margin:10px 0;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:15px;
+
+    transition:.25s;
+
+}
+
+input:focus{
+
+    outline:none;
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 6px rgba(37,99,235,.25);
+
+}
+
+button{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-top:15px;
+
+    border:none;
+
+    border-radius:6px;
+
+    background:#2563eb;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:.25s;
+
+}
+
+button:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+}
+
+.small-text{
+
+    margin-top:15px;
+    color:#555;
+    font-size:14px;
+
+}
+
+a{
+
+    color:#2563eb;
+    text-decoration:none;
+
+}
+
+a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ===========================
+   Dashboard
+=========================== */
+
+.balance-card{
+
+    background:#2563eb;
+
+    color:white;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    margin:25px 0;
+
+    box-shadow:0 5px 12px rgba(37,99,235,.35);
+
+}
+
+.balance{
+
+    font-size:34px;
+    font-weight:bold;
+    margin-top:10px;
+
+}
+
+.menu-button{
+
+    display:block;
+
+    width:100%;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:12px;
+
+    border-radius:6px;
+
+    margin:10px 0;
+
+    text-decoration:none;
+
+    transition:.25s;
+
+}
+
+.menu-button:hover{
+
+    background:#1d4ed8;
+
+    text-decoration:none;
+
+    transform:translateY(-2px);
+
+}
+
+.logout{
+
+    background:#dc3545;
+
+}
+
+.logout:hover{
+
+    background:#b02a37;
+
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+.footer{
+
+    margin-top:30px;
+
+    font-size:13px;
+
+    color:#888;
+
+    line-height:1.5;
+
+}
+
+/* ==============================
+   Transaction History
+============================== */
+
+.history-container{
+
+    width:95%;
+    max-width:900px;
+
+}
+
+.table-wrapper{
+
+    width:100%;
+    overflow-x:auto;
+
+}
+
+.history-table{
+
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+
+    border-radius:8px;
+    overflow:hidden;
+
+}
+
+.history-table th{
+
+    background:#4CAF50;
+    color:white;
+    padding:12px;
+
+}
+
+.history-table td{
+
+    padding:12px;
+    border:1px solid #ddd;
+    text-align:center;
+
+}
+
+.history-table tr:hover{
+
+    background:#f5f5f5;
+
+}
+
+/* ===========================
+   Transaction Cards
+=========================== */
+
+.history-container{
+
+    max-width:600px;
+
+}
+
+.transaction-card{
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:18px;
+
+    margin-top:18px;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.12);
+
+    transition:.3s;
+
+}
+
+.transaction-card:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.transaction-top{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+.transaction-top h3{
+
+    margin:0;
+
+}
+
+.transaction-top p{
+
+    margin-top:6px;
+    color:#666;
+
+}
+
+.amount{
+
+    font-size:24px;
+    font-weight:bold;
+    color:#2e7d32;
+
+}
+
+.transaction-bottom{
+
+    margin-top:15px;
+
+    display:flex;
+    justify-content:space-between;
+
+    color:#777;
+    font-size:14px;
+
+}
+
+/* ===========================
+   Admin Statistics
+=========================== */
+
+.admin-stats{
+
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin:20px 0;
+
+}
+
+.stat-box{
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    width:180px;
+
+    box-shadow:0 3px 8px rgba(0,0,0,.1);
+
+    text-align:center;
+
+}
+
+.stat-box h3{
+
+    margin-bottom:10px;
+
+}
+
+.stat-box p{
+
+    font-size:22px;
+    font-weight:bold;
+    color:#2e7d32;
+
+}
+
+/* ===========================
+   Flash Messages
+=========================== */
+
+.flash{
+
+    width:100%;
+
+    padding:12px;
+
+    margin:15px 0;
+
+    border-radius:8px;
+
+    text-align:center;
+
+    font-weight:bold;
+
+    box-sizing:border-box;
+
+}
+
+.flash.error{
+
+    background:#f8d7da;
+
+    color:#721c24;
+
+    border:1px solid #f5c6cb;
+
+}
+
+.flash.success{
+
+    background:#d4edda;
+
+    color:#155724;
+
+    border:1px solid #c3e6cb;
+
+}

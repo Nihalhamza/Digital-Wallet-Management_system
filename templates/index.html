@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Digital Wallet</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body class="center-page">
+<div class="container">
+
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+    </div>
+
+    <h1>Digital Wallet</h1>
+
+    <div class="subtitle">
+
+        Secure & Simple Wallet Management System
+
+    </div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+
+        {% for category, message in messages %}
+
+            <div class="flash {{ category }}">
+                {{ message }}
+            </div>
+
+        {% endfor %}
+
+    {% endif %}
+    {% endwith %}
+
+    <br>
+
+    <a href="/login" class="menu-button">
+
+        Login
+
+    </a>
+
+    <a href="/register" class="menu-button">
+
+        Register
+
+    </a>
+
+    <div class="footer">
+
+        Fast & Secure<br>
+
+        Digital Wallet Management System
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Transaction History</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container history-container">
+
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+    </div>
+
+    <h1>Digital Wallet</h1>
+
+    <div class="subtitle">
+        Transaction History
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+
+        {% for category, message in messages %}
+
+            <div class="flash {{ category }}">
+                {{ message }}
+            </div>
+
+        {% endfor %}
+
+    {% endif %}
+    {% endwith %}
+
+
+    {% if transactions %}
+
+        {% for transaction in transactions %}
+
+        <!-- DEPOSIT -->
+        {% if transaction.transaction_type == "Deposit" %}
+
+        <div class="transaction-card incoming">
+
+            <div class="transaction-top">
+
+                <div class="transaction-info">
+
+                    <div class="transaction-icon green">
+                        ↓
+                    </div>
+
+                    <div>
+                        <h3>Deposited</h3>
+
+                        <p>
+                            Money added to wallet
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="amount positive">
+                    +₹{{ transaction.amount }}
+                </div>
+
+            </div>
+
+            <div class="transaction-bottom">
+
+                <span class="status">
+                    {{ transaction.status }}
+                </span>
+
+                <span>
+                    {{ transaction.transaction_date.strftime('%d-%m-%Y') }}
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- TRANSFER / DEBIT -->
+        {% else %}
+
+        <div class="transaction-card outgoing">
+
+            <div class="transaction-top">
+
+                <div class="transaction-info">
+
+                    <div class="transaction-icon red">
+                        ↑
+                    </div>
+
+                    <div>
+                        <h3>Debited</h3>
+
+                        <p>
+                            To: {{ transaction.receiver_email }}
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="amount negative">
+                    -₹{{ transaction.amount }}
+                </div>
+
+            </div>
+
+            <div class="transaction-bottom">
+
+                <span class="status">
+                    {{ transaction.status }}
+                </span>
+
+                <span>
+                    {{ transaction.transaction_date.strftime('%d-%m-%Y') }}
+                </span>
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>No transactions yet.</p>
+
+    {% endif %}
+
+
+    <br>
+
+    <a href="/dashboard" class="menu-button">
+        ⬅ Back to Dashboard
+    </a>
+
+</div>
+
+</body>
+
+</html>
